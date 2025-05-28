@@ -44,6 +44,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>吳老師-中文及普通話補習課程 </title>
   <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans">
   <!-- Header -->
@@ -135,27 +136,56 @@
       </div>
     </div>
   </section>
- <!-- Gallery Section -->
-<section id="gallery" class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-8">Gallery</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="relative">
-        <img src="images/photo1.jpg" alt="Teaching a math class" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <p class="text-center text-gray-600 mt-2">Teaching a math class</p>
+<!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Gallery</h2>
+      <div class="max-w-3xl mx-auto">
+        <!-- Qualifications Carousel -->
+        <h3 class="text-2xl font-semibold mb-4">Qualifications</h3>
+        <div class="glider-contain mb-8">
+          <div class="glider-qualifications">
+            <div class="relative">
+              <img src="images/qualification1.jpg" alt="Bachelor’s in Mathematics" class="w-full h-64 object-contain rounded-lg shadow-md">
+              <p class="text-center text-gray-600 mt-2">Bachelor’s in Mathematics, 2015</p>
+            </div>
+            <div class="relative">
+              <img src="images/qualification2.jpg" alt="Teaching Certification" class="w-full h-64 object-contain rounded-lg shadow-md">
+              <p class="text-center text-gray-600 mt-2">Teaching Certification, 2020</p>
+            </div>
+            <div class="relative">
+              <img src="images/qualification3.jpg" alt="STEM Education Certificate" class="w-full h-64 object-contain rounded-lg shadow-md">
+              <p class="text-center text-gray-600 mt-2">STEM Education Certificate, 2022</p>
+            </div>
+          </div>
+          <button aria-label="Previous" class="glider-prev-qualifications">«</button>
+          <button aria-label="Next" class="glider-next-qualifications">»</button>
+          <div id="dots-qualifications" class="glider-dots"></div>
+        </div>
+        <!-- Awards Carousel -->
+        <h3 class="text-2xl font-semibold mb-3">Awards</h3>
+        <div class="glider-contain">
+          <div class="glider-awards">
+            <div class="relative">
+              <img src="images/award1.jpg" alt="Teacher of the Year" class="w-full h-64 object-contain rounded-lg shadow-md">
+              <p class="text-center text-gray-600 mt-2">Teacher of the Year, 2020</p>
+            </div>
+            <div class="relative">
+              <img src="images/award2.jpg" alt="Excellence in Education" class="w-full h-64 object-contain rounded-lg shadow-md">
+              <p class="text-center text-gray-600 mt-2">Excellence in Education, 2021</p>
+            </div>
+            <div class="relative">
+              <img src="images/award3.jpg" alt="Outstanding Tutor Award" class="w-full h-64 object-contain rounded-lg shadow-md">
+              <p class="text-center text-gray-600 mt-2">Outstanding Tutor Award, 2023</p>
+            </div>
+          </div>
+          <button aria-label="Previous" class="glider-prev-awards">«</button>
+          <button aria-label="Next" class="glider-next-awards">»</button>
+          <div id="dots-awards" class="glider-dots"></div>
+        </div>
       </div>
-      <div class="relative">
-        <img src="images/photo2.jpg" alt="Student success celebration" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <p class="text-center text-gray-600 mt-2">Student success celebration</p>
-      </div>
-      <div class="relative">
-        <img src="images/photo3.jpg" alt="Classroom setup" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <p class="text-center text-gray-600 mt-2">Classroom setup</p>
-      </div>
-      <!-- Add more photos as needed -->
     </div>
-  </div>
-</section>
+  </section>
   <!-- Contact Section -->
   <section id="contact" class="bg-white py-16">
     <div class="container mx-auto px-4">
@@ -225,6 +255,28 @@
       document.getElementById('email').value = '';
       document.getElementById('message').value = '';
     }
+  </script>
+          <!-- JavaScript for Glider.js Carousels -->
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <script>
+    new Glider(document.querySelector('.glider-qualifications'), {
+      slidesToShow: 1,
+      dots: '#dots-qualifications',
+      draggable: true,
+      arrows: {
+        prev: '.glider-prev-qualifications',
+        next: '.glider-next-qualifications'
+      }
+    });
+    new Glider(document.querySelector('.glider-awards'), {
+      slidesToShow: 1,
+      dots: '#dots-awards',
+      draggable: true,
+      arrows: {
+        prev: '.glider-prev-awards',
+        next: '.glider-next-awards'
+      }
+    });
   </script>
 </body>
 </html>
